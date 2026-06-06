@@ -13,9 +13,21 @@
 
     --color-green-200: hsl(148, 38%, 91%);
     --color-green-600: hsl(169, 82%, 27%);
+    --color-green-800: hsl(169, 82%, 14%);
 
     --color-grey-500: hsl(186, 15%, 59%);
     --color-grey-900: hsl(187, 24%, 22%);
 
     --font-karla: 'Karla';
+}
+
+body{
+    background-color: var(--color-green-200);
+    padding: 32px 16px;
+}
+
+@media(min-width: 768px){
+    body{
+        padding: 128px 0;
+    }
 }
