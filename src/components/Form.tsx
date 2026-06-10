@@ -33,7 +33,6 @@ export default function Form() {
             <div className="flex flex-col gap-6 md:flex-row">
                 <Fields
                     title="First Name"
-                    name="firstName"
                     type="text"
                     {...register('firstName', {
                         required: 'This field is required'
@@ -42,7 +41,6 @@ export default function Form() {
                 />
                 <Fields
                     title="Last Name"
-                    name="lastName"
                     type="text"
                     {...register('lastName', {
                         required: 'This field is required'
@@ -52,7 +50,6 @@ export default function Form() {
             </div>
             <Fields
                 title="Email Address"
-                name="emailAddress"
                 type="text"
                 {...register('email', {
                     required: 'Email is required',
