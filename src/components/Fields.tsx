@@ -1,15 +1,17 @@
-type FieldsProps = {
+import type React from "react"
+import Error from "./Error"
+
+type FieldsProps = React.InputHTMLAttributes<HTMLInputElement> & {
     title: string,
-    name: string,
-    type: string
+    error: string | undefined
 }
 
-export default function Fields({ title, name ,type } : FieldsProps) {
+export default function Fields({ title, error, ...rest } : FieldsProps) {
 
     return (
         <div>
             <label
-                htmlFor={name}
+                htmlFor={rest.name}
                 className="font-karla font-normal text-left text-sm text-grey-900"
             >
                 {title}
@@ -18,12 +20,16 @@ export default function Fields({ title, name ,type } : FieldsProps) {
                 </span>
             </label>
             <input
-                type={type}
-                name={name}
-                id={name}
-                className="w-full h-auto border border-grey-500 rounded-lg py-3 px-6 cursor-pointer mt-2.5
-                    font-karla font-medium text-left text-lg text-grey-900 focus:outline-none focus:border-green-600"
+                {...rest}
+                className={`w-full h-auto border ${error ? 'border-errors' : 'border-grey-500'}  rounded-lg py-3 px-6 cursor-pointer mt-2.5
+                    font-karla font-medium text-left text-lg text-grey-900 focus:outline-none ${error ? 'focus:border-errors' : 'focus:border-green-600'}
+                `}
             />
+            {error &&
+                <Error>
+                    {error}
+                </Error>
+            }
         </div>
     )
 
