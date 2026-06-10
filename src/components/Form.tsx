@@ -97,7 +97,6 @@ export default function Form() {
                 <textarea
                     className={`w-full h-auto rounded-lg py-3 px-6 border ${errors.message ? 'border-errors focus:border-errors' : 'border-grey-500 focus:border-green-600'}
                         resize-none focus:outline-none font-karla font-normal text-lg text-left text-grey-900`}
-                    name="message"
                     rows={5}
                     id="message"
                     {...register('message', {
